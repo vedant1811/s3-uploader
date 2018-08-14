@@ -1,24 +1,36 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
 
-Things you may want to cover:
+## Local Installation
 
-* Ruby version
+`git clone` the repository
 
-* System dependencies
+run `bundle` inside the dir
 
-* Configuration
+setup the database:
 
-* Database creation
+create the postgres user:
 
-* Database initialization
+    $ sudo -u postgres psql
 
-* How to run the test suite
+    postgres=# create user rails with password 'rails';
+    postgres=# alter role rails  superuser createrole createdb replication;
 
-* Services (job queues, cache servers, search engines, etc.)
+    <CTRL+D to exit psql cli>
 
-* Deployment instructions
+create the database and set the schema:
 
-* ...
+    $ rails db:setup
+
+run the server:
+
+    $ rails server
+
+run the tests:
+
+    $ rails test
+
+## TODO:
+
+ - update `status` of `asset` from `active` in a background job with a timeout,
+ i.e. do away with `PUT ​/asset/​<asset-id>`

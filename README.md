@@ -34,3 +34,5 @@ run the tests:
 
  - update `status` of `asset` from `active` in a background job with a timeout,
  i.e. do away with `PUT ​/asset/​<asset-id>`
+
+ - Handle upload failures

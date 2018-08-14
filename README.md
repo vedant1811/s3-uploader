@@ -1,6 +1,12 @@
 # README
 
 
+## Notes
+
+ - The AssetUrlCreator is mocked in tests
+
+ - A S3 signed URL once created cannot be revoked
+
 ## Local Installation
 
 `git clone` the repository

@@ -14,4 +14,22 @@ class AssetsControllerTest < ActionDispatch::IntegrationTest
     assert_mock asset_url_creator
     assert_response :created
   end
+
+  test 'should update status on update' do
+    asset = assets :two
+    assert asset.uploading?
+
+    put asset_url asset, status: 'uploaded'
+    assert_response :no_content
+    assert asset.reload.uploaded?
+  end
+
+  test 'should render error on incorrect status' do
+    asset = assets :two
+    assert asset.uploading?
+
+    put asset_url asset, status: 'uploading'
+    assert_response :bad_request
+    assert asset.reload.uploading?
+  end
 end

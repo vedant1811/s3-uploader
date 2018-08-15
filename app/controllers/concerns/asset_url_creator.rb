@@ -21,11 +21,11 @@ class AssetUrlCreator
         )
   end
 
-  def download_url(file_path, timeout = nil)
+  def download_url(file_name, timeout = nil)
     @client.get_object_url(
           @bucket_name,
           file_path(file_name),
-          time_to_accesss
+          time_to_access
         )
   end
 

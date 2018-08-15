@@ -1,10 +1,10 @@
-class AssetsController < ApplicationController
+class AssetController < ApplicationController
   before_action :set_asset, only: [:update, :show]
 
   def create
     asset = Asset.create!
     render json: {
-      upload_url: asset_url_creator.upload_url,
+      upload_url: asset_url_creator.upload_url(asset.id),
       id: asset.id
     }, status: :created
   end

@@ -1,13 +1,13 @@
 require 'test_helper'
 
-class AssetsControllerTest < ActionDispatch::IntegrationTest
+class AssetControllerTest < ActionDispatch::IntegrationTest
   test 'should create upload_url on create' do
     asset_url_creator = Minitest::Mock.new
-    asset_url_creator.expect :upload_url, 'url'
+    asset_url_creator.expect :upload_url, 'url', [Integer]
 
     AssetUrlCreator.stub :new, asset_url_creator do
       assert_difference 'Asset.count' do
-        post assets_url
+        post asset_index_url
       end
     end
 

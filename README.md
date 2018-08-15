@@ -28,6 +28,10 @@ create the database and set the schema:
 
     $ rails db:setup
 
+
+Fill in the file `config/s3_credentials.yml` with S3 credentials. Make sure the bucket is created
+and user has read-write access
+
 run the server:
 
     $ rails server

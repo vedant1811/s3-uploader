@@ -1,3 +1,5 @@
+
+# pirated from https://pawelurbanek.com/rails-secure-s3-uploads
 class AssetUrlCreator
   def initialize
     config = Rails.configuration.s3_credentials

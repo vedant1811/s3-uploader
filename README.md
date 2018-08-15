@@ -36,6 +36,9 @@ and user has access. It should look something like:
     development:
       <<: *default
 
+    test:
+      <<: *default
+
     production:
       <<: *default
 

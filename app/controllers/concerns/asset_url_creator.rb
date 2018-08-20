@@ -25,7 +25,7 @@ class AssetUrlCreator
     @client.get_object_url(
           @bucket_name,
           file_path(file_name),
-          time_to_access
+          time_to_access(timeout)
         )
   end
 

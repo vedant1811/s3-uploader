@@ -93,3 +93,6 @@ when you try to upload the file to the `upload_url`.
 i.e. do away with `PUT ​/asset/​<asset-id>`
 
 - Handle upload failures
+
+- Take a file name with extension in `POST /asset` request so that the downloaded file has a nice name,
+or atleast the correct extension
